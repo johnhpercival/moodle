@@ -56,8 +56,8 @@ class profile_field_menu extends profile_field_base {
             $options = array();
         }
         $this->options = array();
-        if (!empty($this->field->required)) {
-            $this->options[''] = get_string('choose').'...';
+        if (empty($this->field->required)) {
+            $this->options[''] = get_string('choosedots');
         }
         foreach ($options as $key => $option) {
             // Multilang formatting with filters.
